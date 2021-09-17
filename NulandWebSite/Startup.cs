@@ -69,10 +69,18 @@ namespace NulandWebSite{
             }
             
 	        app.UseHttpsRedirection();
+            app.UseSpaStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                   Path.Combine(Directory.GetCurrentDirectory(), "Photos")),
+                RequestPath = "/Photos"
+            });
+
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseSpaStaticFiles();
+            
 
             app.UseEndpoints(endpoints =>
             {
@@ -91,12 +99,7 @@ namespace NulandWebSite{
                 }
             });
 
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                   Path.Combine(Directory.GetCurrentDirectory(), "Photos")),
-                RequestPath = "/Photos"
-            });
+            
         }
     }
 }

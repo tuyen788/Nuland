@@ -43,15 +43,15 @@ export class Listings extends Component {
   render() {
     const { listings } = this.state;
 
-   
+  
 
     let data = [];
     listings.map((list) => {
-      data.push({ image: `../../../../Photos/${list.PhotoFileName1}` });
-        data.push({ image: "https://cdn.vox-cdn.com/thumbor/Ous3VQj1sn4tvb3H13rIu8eGoZs=/0x0:2012x1341/1400x788/filters:focal(0x0:2012x1341):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg"});
-      data.push({ image: `${variables.PHOTO_URL}${list.PhotoFileName3}` });
-      data.push({ image: `${variables.PHOTO_URL}${list.PhotoFileName4}` });
-      data.push({ image: `${variables.PHOTO_URL}${list.PhotoFileName5}` });
+        data.push({ image: `Photos/${list.PhotoFileName1}` });
+        data.push({ image: `Photos/${list.PhotoFileName2}` });
+        data.push({ image: `Photos/${list.PhotoFileName3}` });
+        data.push({ image: `Photos/${list.PhotoFileName4}` });
+        data.push({ image: `Photos/${list.PhotoFileName5}` });
       list.data = data;
       data = [];
     });
