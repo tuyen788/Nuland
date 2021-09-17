@@ -1,0 +1,35 @@
+.posters__container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.posters__wrapper {
+  position: relative;
+  margin: 50px 0 45px;
+}
+
+.posters__items {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.poster__item {
+  display: flex;
+  flex: 1;
+  margin: 1rem 1rem 1rem 1rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.poster__picture {
+  width: 700px;
+}
+
+.poster__info {
+  max-width: 600px;
+}
