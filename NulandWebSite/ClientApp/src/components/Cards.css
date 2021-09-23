@@ -17,13 +17,24 @@ h1 {
 }
 
 .cards__wrapper {
-  position: relative;
-  margin: 50px 0 45px;
+    position: relative;
+    margin: 50px 0 45px;
+    /*overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: inline-block;*/
 }
 
 .cards__items {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
+    display: inline-block;
 }
+
+/*.cards__items > ul {
+    overflow: scroll;
+    white-space: nowrap;
+}*/
+
 
 .cards__item {
   display: flex;

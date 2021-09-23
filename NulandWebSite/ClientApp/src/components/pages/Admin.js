@@ -15,13 +15,13 @@ export class Admin extends Component {
       ListingID: 0,
       Type: "",
       Price: "",
+      Deposit: "",
+      Area: "",
       Amenities: "",
       Link: "",
       Policy: "",
       Status: 0,
-      Street: "",
       City: "",
-      State: "",
       Zipcode: 0,
       AvailableDate: "",
       PhotoFileName1: "default.jpg",
@@ -40,7 +40,7 @@ export class Admin extends Component {
   };
 
   refreshList() {
-    fetch(variables.API_URL + "Listings")
+    fetch("api/Listings")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ listings: data });
@@ -57,6 +57,14 @@ export class Admin extends Component {
 
   changePrice = (e) => {
     this.setState({ Price: e.target.value });
+    };
+
+  changeDeposit = (e) => {
+    this.setState({ Deposit: e.target.value });
+  };
+
+  changeArea = (e) => {
+    this.setState({ Area: e.target.value });
   };
 
   changeAmenities = (e) => {
@@ -67,16 +75,9 @@ export class Admin extends Component {
     this.setState({ Link: e.target.value });
   };
 
-  changeStreet = (e) => {
-    this.setState({ Street: e.target.value });
-  };
 
   changeCity = (e) => {
     this.setState({ City: e.target.value });
-  };
-
-  changeState = (e) => {
-    this.setState({ State: e.target.value });
   };
 
   changeZipcode = (e) => {
@@ -100,14 +101,14 @@ export class Admin extends Component {
       modalTitle: "Add Listing",
       ListingID: 0,
       Type: "",
-      Price: "",
+        Price: "",
+        Deposit: "",
+        Area: "",
       Amenities: "",
       Link: "",
       Policy: "",
       Status: 0,
-      Street: "",
       City: "",
-      State: "",
       Zipcode: 0,
       AvailableDate: "",
       PhotoFileName1: "default.jpg",
@@ -124,11 +125,11 @@ export class Admin extends Component {
       ListingID: list.ListingID,
       Type: list.Type,
       Price: list.Price,
+      Deposit: list.Deposit,
+      Area: list.Area,
       Amenities: list.Amenities,
       Link: list.Link,
-      Street: list.Street,
       City: list.City,
-      State: list.State,
       Zipcode: list.Zipcode,
       Policy: list.Policy,
       Status: list.Status,
@@ -141,86 +142,80 @@ export class Admin extends Component {
     });
   }
 
-  createClick() {
-    fetch(variables.API_URL + "Listings", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        Type: this.state.Type,
-        Price: this.state.Price,
-        Amenities: this.state.Amenities,
-        Link: this.state.Link,
-        Street: this.state.Street,
-        City: this.state.City,
-        State: this.state.State,
-        Zipcode: this.state.Zipcode,
-        Policy: this.state.Policy,
-        Status: this.state.Status,
-        AvailableDate: this.state.AvailableDate,
-        PhotoFileName1: this.state.PhotoFileName1,
-        PhotoFileName2: this.state.PhotoFileName2,
-        PhotoFileName3: this.state.PhotoFileName3,
-        PhotoFileName4: this.state.PhotoFileName4,
-        PhotoFileName5: this.state.PhotoFileName5,
-      }),
-    })
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          alert(result);
+  async createClick() {
+      const res = await fetch("api/Listings", {
+          method: "POST",
+          headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+              Type: this.state.Type,
+              Price: this.state.Price,
+              Deposit: this.state.Deposit,
+              Area: this.state.Area,
+              Amenities: this.state.Amenities,
+              Link: this.state.Link,
+              City: this.state.City,
+              Zipcode: this.state.Zipcode,
+              Policy: this.state.Policy,
+              Status: this.state.Status,
+              AvailableDate: this.state.AvailableDate,
+              PhotoFileName1: this.state.PhotoFileName1,
+              PhotoFileName2: this.state.PhotoFileName2,
+              PhotoFileName3: this.state.PhotoFileName3,
+              PhotoFileName4: this.state.PhotoFileName4,
+              PhotoFileName5: this.state.PhotoFileName5,
+          }),
+      });
+
+      if (res.status == 400) {
+          window.alert("Please fill out all fields! ");
+      } else if (res.status == 200) {
+          window.alert("Added Succesfully");
           this.refreshList();
-        },
-        (error) => {
-          alert("Failed");
-        }
-      );
+      }
   }
 
-  updateClick() {
-    fetch(variables.API_URL + "Listings", {
-      method: "PUT",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ListingID: this.state.ListingID,
-        Type: this.state.Type,
-        Price: this.state.Price,
-        Amenities: this.state.Amenities,
-        Link: this.state.Link,
-        Street: this.state.Street,
-        City: this.state.City,
-        State: this.state.State,
-        Zipcode: this.state.Zipcode,
-        Policy: this.state.Policy,
-        Status: this.state.Status,
-        AvailableDate: this.state.AvailableDate,
-        PhotoFileName1: this.state.PhotoFileName1,
-        PhotoFileName2: this.state.PhotoFileName2,
-        PhotoFileName3: this.state.PhotoFileName3,
-        PhotoFileName4: this.state.PhotoFileName4,
-        PhotoFileName5: this.state.PhotoFileName5,
-      }),
-    })
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          alert(result);
-          this.refreshList();
-        },
-        (error) => {
-          alert("Failed");
+  async updateClick() {
+        const res = await fetch("api/Listings", {
+            method: "PUT",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                ListingID: this.state.ListingID,
+                Type: this.state.Type,
+                Price: this.state.Price,
+                Deposit: this.state.Deposit,
+                Area: this.state.Area,
+                Amenities: this.state.Amenities,
+                Link: this.state.Link,
+                City: this.state.City,
+                Zipcode: this.state.Zipcode,
+                Policy: this.state.Policy,
+                Status: this.state.Status,
+                AvailableDate: this.state.AvailableDate,
+                PhotoFileName1: this.state.PhotoFileName1,
+                PhotoFileName2: this.state.PhotoFileName2,
+                PhotoFileName3: this.state.PhotoFileName3,
+                PhotoFileName4: this.state.PhotoFileName4,
+                PhotoFileName5: this.state.PhotoFileName5,
+            }),
+        });
+    
+        if (res.status == 400) {
+            window.alert("Please fill out all fields! ");
+        } else if (res.status == 200) {
+            window.alert("Updated Succesfully");
+            this.refreshList();
         }
-      );
   }
 
   deleteClick(id) {
     if (window.confirm("Are you sure?")) {
-      fetch(variables.API_URL + "Listings/" + id, {
+      fetch("api/Listings/" + id, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -233,14 +228,14 @@ export class Admin extends Component {
             alert(result);
             this.refreshList();
           },
-          (error) => {
+            (error) => {
             alert("Failed");
           }
-        );
+       );
     }
   }
 
-  // async deleteClick(id) {
+  //  async deleteClick(id) {
   //   // console.log("value: " + JSON.stringify(this.state.recipe));
   //   const res = await fetch(variables.API_URL + "Listings/" + id, {
   //     method: "DELETE",
@@ -264,7 +259,7 @@ export class Admin extends Component {
     const formData = new FormData();
     formData.append("file", e.target.files[0], e.target.files[0].name);
 
-    fetch(variables.API_URL + "listings/savefile", {
+    fetch("api/listings/savefile", {
       method: "POST",
       body: formData,
     })
@@ -281,10 +276,10 @@ export class Admin extends Component {
       ListingID,
       Type,
       Price,
+      Deposit,
+      Area,
       Amenities,
-      Street,
       City,
-      State,
       Zipcode,
       Link,
       Policy,
@@ -344,17 +339,19 @@ export class Admin extends Component {
                   <div className="poster__item" key={list.ListingID}>
                     <div className="poster__picture">
                       <CardItem
-                        src={PhotoPath + list.PhotoFileName1}
-                        text={`${list.Type} in ${list.City}, ${list.State}`}
+                        src={'Photos/'+ list.PhotoFileName1}
+                        text={`${list.Type} in ${list.City}, AZ`}
                         label={list.Type}
                       />
                     </div>
                     <div className="poster__info">
                       <h3>
-                        {list.Type} in {list.City}, {list.State}
+                        {list.Type} in {list.City}, AZ
                       </h3>
                       <p>Available date: {list.AvailableDate}</p>
                       <p>Price: {list.Price}</p>
+                      <p>Deposit: {list.Deposit}</p>
+                      <p>Area: {list.Area} sqft</p>
                       <p>Amenities: {list.Amenities}</p>
                       <div className="hero-btns">
                         <button
@@ -447,6 +444,26 @@ export class Admin extends Component {
                     </div>
 
                     <div className="input-group mb-3">
+                        <span className="input-group-text">Deposit</span>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={Deposit}
+                            onChange={this.changeDeposit}
+                        />
+                    </div>
+
+                    <div className="input-group mb-3">
+                        <span className="input-group-text">Area</span>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={Area}
+                            onChange={this.changeArea}
+                        />
+                    </div>
+
+                    <div className="input-group mb-3">
                       <span className="input-group-text">Amenities</span>
                       <input
                         type="text"
@@ -467,32 +484,12 @@ export class Admin extends Component {
                     </div>
 
                     <div className="input-group mb-3">
-                      <span className="input-group-text">Street</span>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={Street}
-                        onChange={this.changeStreet}
-                      />
-                    </div>
-
-                    <div className="input-group mb-3">
                       <span className="input-group-text">City</span>
                       <input
                         type="text"
                         className="form-control"
                         value={City}
                         onChange={this.changeCity}
-                      />
-                    </div>
-
-                    <div className="input-group mb-3">
-                      <span className="input-group-text">State</span>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={State}
-                        onChange={this.changeState}
                       />
                     </div>
 
@@ -516,15 +513,17 @@ export class Admin extends Component {
                       />
                     </div>
 
-                    <div className="input-group mb-3">
-                      <span className="input-group-text">Status</span>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={Status}
-                        onChange={this.changeStatus}
-                      />
-                    </div>
+                    {/*<div className="input-group mb-3">*/}
+                    {/*  <span className="input-group-text">Status</span>*/}
+                    {/*  <input*/}
+                    {/*    type="text"*/}
+                    {/*    className="form-control"*/}
+                    {/*    value={Status}*/}
+                    {/*    onChange={this.changeStatus}*/}
+                    {/*  />*/}
+                    {/*</div>*/}
+
+                    
 
                     <div className="input-group mb-3">
                       <span className="input-group-text">Available Date</span>
@@ -534,6 +533,14 @@ export class Admin extends Component {
                         value={AvailableDate}
                         onChange={this.changeAvailableDate}
                       />
+                    </div>
+
+                    <div classname="input-group mb-3">
+                        <label>Status</label>
+                        <select value={Status} onChange={this.changeStatus}>
+                            <option value="1">Available</option>
+                            <option value="0">Unavailable</option>
+                        </select>
                     </div>
                   </div>
                   <div className="p-2 w-50 bd-highlight">

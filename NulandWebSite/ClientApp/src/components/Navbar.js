@@ -40,11 +40,11 @@ function Navbar() {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
-              </Link>
-            </li>
+            {/*<li className="nav-item">*/}
+            {/*  <Link to="/" className="nav-links" onClick={closeMobileMenu}>*/}
+            {/*    Home*/}
+            {/*  </Link>*/}
+            {/*</li>*/}
             <li className="nav-item">
               <Link
                 to="/listings"
@@ -64,18 +64,23 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
+                <Link to="/contact-us" className="nav-links" onClick={closeMobileMenu}>
+                    Contact Us
+                </Link>
+            </li>
+            <li className="nav-item">
               <Link
                 to="/apply"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                APPLY NOW
+                WHAT TO KNOW BEFORE APPLYING
               </Link>
             </li>
           </ul>
           {button && (
             <Button buttonStyle="btn--outline" destination="apply">
-              APPLY NOW
+                Before You Apply
             </Button>
           )}
         </div>

@@ -6,34 +6,32 @@ import logo from "../images/nuland-logo-big.png";
 function Footer() {
   return (
     <div className="footer-container">
-      <section className="footer-subscription">
-        <p className="footer-subscription-heading">
-          Join the Nuland newsletter to receive notifications about newest
-          listings.
-        </p>
-        <p className="footer-subscription-text">
-          You can unsubscribe at any time.
-        </p>
-        <div className="input-areas">
-          <form>
-            <input
-              className="footer-input"
-              name="email"
-              type="email"
-              placeholder="Your Email"
-            />
-            <Button buttonStyle="btn--outline">Subscribe</Button>
-          </form>
-        </div>
-      </section>
+      {/*<section className="footer-subscription">*/}
+      {/*  <p className="footer-subscription-heading">*/}
+      {/*    Join the Nuland newsletter to receive notifications about newest*/}
+      {/*    listings.*/}
+      {/*  </p>*/}
+      {/*  <p className="footer-subscription-text">*/}
+      {/*    You can unsubscribe at any time.*/}
+      {/*  </p>*/}
+      {/*  <div className="input-areas">*/}
+      {/*    <form>*/}
+      {/*      <input*/}
+      {/*        className="footer-input"*/}
+      {/*        name="email"*/}
+      {/*        type="email"*/}
+      {/*        placeholder="Your Email"*/}
+      {/*      />*/}
+      {/*      <Button buttonStyle="btn--outline">Subscribe</Button>*/}
+      {/*    </form>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
       <div class="footer-links">
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
             <h2>About Us</h2>
-            <Link to="/sign-up">How it works</Link>
-            <Link to="/">Contact Us</Link>
-            <Link to="/">Policies</Link>
-            <Link to="/">Terms of Service</Link>
+            <Link to="/contact-us">Contact Us</Link>
+            <Link to="/apply">Policies</Link>
             <Link to="/">FAQs</Link>
           </div>
           {/* <div class="footer-link-items">
@@ -53,11 +51,9 @@ function Footer() {
             <Link to="/">Influencer</Link>
           </div> */}
           <div class="footer-link-items">
-            <h2>Social Media</h2>
-            <Link to="/">Instagram</Link>
-            <Link to="/">Facebook</Link>
-            <Link to="/">Youtube</Link>
-            <Link to="/">Twitter</Link>
+            <h2>Find Us</h2>
+            <a href="https://www.facebook.com/NuLandCom">Facebook</a>
+            <a href="mailto:homlandllc@outlook.com">Email</a>
             <Link to="/admin">Admin</Link>
           </div>
         </div>
@@ -74,38 +70,23 @@ function Footer() {
           </div>
           <small className="website-rights">Nuland &copy; 2021</small>
           <div className="social-icons">
-            <Link
+            <a
               className="social-icon-link facebook"
-              to="/"
+              href="https://www.facebook.com/NuLandCom"
               target="_blank"
               aria-label="Facebook"
             >
               <i className="fab fa-facebook-f"></i>
-            </Link>
-            <Link
-              className="social-icon-link instagram"
-              to="/"
+            </a>
+            <a
+              className="social-icon-link email"
+              href="mailto:NulandRE@outlook.com"
               target="_blank"
-              aria-label="Instagram"
+              aria-label="Email"
             >
-              <i className="fab fa-instagram"></i>
-            </Link>
-            <Link
-              className="social-icon-link youtube"
-              to="/"
-              target="_blank"
-              aria-label="Youtube"
-            >
-              <i className="fab fa-youtube"></i>
-            </Link>
-            <Link
-              className="social-icon-link twitter"
-              to="/"
-              target="_blank"
-              aria-label="Twitter"
-            >
-              <i className="fab fa-twitter"></i>
-            </Link>
+               <i class="far fa-envelope"></i>
+            </a>
+           
           </div>
         </div>
       </section>

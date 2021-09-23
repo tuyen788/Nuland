@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  list-style-type:none !important;
 }
 
 .navbar-container {
@@ -30,12 +31,8 @@
 }
 
 .navbar-logo-img {
-  justify-self: start;
-  margin-left: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  height: 100px;
+    height: 3.7rem;
+    margin-left: 0.5rem;
 }
 
 .fa-typo3 {

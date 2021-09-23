@@ -30,7 +30,7 @@ namespace nulandWebApp.Controllers
         public JsonResult Get()
         {
             string query = @"
-                            select ListingID,Type,Price,Amenities,Link,Policy,Status,Street,City,State,Zipcode,convert(varchar(10),AvailableDate,120) as AvailableDate,PhotoFileName1,PhotoFileName2,PhotoFileName3,PhotoFileName4,PhotoFileName5
+                            select ListingID,Type,Price,Deposit,Area,Amenities,Link,Policy,Status,City,Zipcode,convert(varchar(10),AvailableDate,120) as AvailableDate,PhotoFileName1,PhotoFileName2,PhotoFileName3,PhotoFileName4,PhotoFileName5
                             from
                             dbo.Listings
                             ";
@@ -58,8 +58,8 @@ namespace nulandWebApp.Controllers
         {
             string query = @"
                            insert into dbo.Listings
-                           (Type,Price,Amenities,Link,Policy,Status,Street,City,State,Zipcode,AvailableDate,PhotoFileName1,PhotoFileName2,PhotoFileName3,PhotoFileName4,PhotoFileName5)
-                    values (@Type,@Price,@Amenities,@Link,@Policy,@Status,@Street,@City,@State,@Zipcode,@AvailableDate,@PhotoFileName1,@PhotoFileName2,@PhotoFileName3,@PhotoFileName4,@PhotoFileName5)
+                           (Type,Price,Deposit,Area,Amenities,Link,Policy,Status,City,Zipcode,AvailableDate,PhotoFileName1,PhotoFileName2,PhotoFileName3,PhotoFileName4,PhotoFileName5)
+                    values (@Type,@Price,@Deposit,@Area,@Amenities,@Link,@Policy,@Status,@City,@Zipcode,@AvailableDate,@PhotoFileName1,@PhotoFileName2,@PhotoFileName3,@PhotoFileName4,@PhotoFileName5)
                             ";
 
             DataTable table = new DataTable();
@@ -72,13 +72,13 @@ namespace nulandWebApp.Controllers
                 {
                     myCommand.Parameters.AddWithValue("@Type", list.Type);
                     myCommand.Parameters.AddWithValue("@Price", list.Price);
+                    myCommand.Parameters.AddWithValue("@Deposit", list.Deposit);
+                    myCommand.Parameters.AddWithValue("@Area", list.Area);
                     myCommand.Parameters.AddWithValue("@Amenities", list.Amenities);
                     myCommand.Parameters.AddWithValue("@Link", list.Link);
                     myCommand.Parameters.AddWithValue("@Policy", list.Policy);
                     myCommand.Parameters.AddWithValue("@Status", list.Status);
-                    myCommand.Parameters.AddWithValue("@Street", list.Street);
                     myCommand.Parameters.AddWithValue("@City", list.City);
-                    myCommand.Parameters.AddWithValue("@State", list.State);
                     myCommand.Parameters.AddWithValue("@Zipcode", list.Zipcode);
                     myCommand.Parameters.AddWithValue("@AvailableDate", list.AvailableDate);
                     myCommand.Parameters.AddWithValue("@PhotoFileName1", list.PhotoFileName1);
@@ -103,7 +103,7 @@ namespace nulandWebApp.Controllers
         {
             string query = @"
                            update dbo.Listings
-                           set Type=@Type,Price=@Price,Amenities=@Amenities,Link=@Link,Policy=@Policy,Status=@Status,Street=@Street,City=@City,State=@State,Zipcode=@Zipcode,AvailableDate=@AvailableDate,PhotoFileName1=@PhotoFileName1,PhotoFileName2=@PhotoFileName3,PhotoFileName3=@PhotoFileName3,PhotoFileName4=@PhotoFileName4,PhotoFileName5=@PhotoFileName5
+                           set Type=@Type,Price=@Price,Deposit=@Deposit,Area=@Area,Amenities=@Amenities,Link=@Link,Policy=@Policy,Status=@Status,City=@City,Zipcode=@Zipcode,AvailableDate=@AvailableDate,PhotoFileName1=@PhotoFileName1,PhotoFileName2=@PhotoFileName3,PhotoFileName3=@PhotoFileName3,PhotoFileName4=@PhotoFileName4,PhotoFileName5=@PhotoFileName5
                             where ListingID=@ListingID
                             ";
 
@@ -118,13 +118,13 @@ namespace nulandWebApp.Controllers
                     myCommand.Parameters.AddWithValue("@ListingID", list.ListingID);
                     myCommand.Parameters.AddWithValue("@Type", list.Type);
                     myCommand.Parameters.AddWithValue("@Price", list.Price);
+                    myCommand.Parameters.AddWithValue("@Deposit", list.Deposit);
+                    myCommand.Parameters.AddWithValue("@Area", list.Area);
                     myCommand.Parameters.AddWithValue("@Amenities", list.Amenities);
                     myCommand.Parameters.AddWithValue("@Link", list.Link);
                     myCommand.Parameters.AddWithValue("@Policy", list.Policy);
                     myCommand.Parameters.AddWithValue("@Status", list.Status);
-                    myCommand.Parameters.AddWithValue("@Street", list.Street);
                     myCommand.Parameters.AddWithValue("@City", list.City);
-                    myCommand.Parameters.AddWithValue("@State", list.State);
                     myCommand.Parameters.AddWithValue("@Zipcode", list.Zipcode);
                     myCommand.Parameters.AddWithValue("@AvailableDate", list.AvailableDate);
                     myCommand.Parameters.AddWithValue("@PhotoFileName1", list.PhotoFileName1);

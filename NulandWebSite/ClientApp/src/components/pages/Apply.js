@@ -1,63 +1,75 @@
 import React from "react";
-import SlideShow from "../SlideShow";
-function Apply() {
-  const data = [
-    {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
-      caption: `<div>
-                  San Francisco
-                  <br/>
-                  Next line
-                </div>`,
-    },
-    {
-      image:
-        "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
-      caption: "Scotland",
-    },
-    {
-      image:
-        "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
-      caption: "Darjeeling",
-    },
-    {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
-      caption: "San Francisco",
-    },
-    {
-      image:
-        "https://i.natgeofe.com/n/f7732389-a045-402c-bf39-cb4eda39e786/scotland_travel_4x3.jpg",
-      caption: "Scotland",
-    },
-    {
-      image:
-        "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
-      caption: "Darjeeling",
-    },
-    {
-      image:
-        "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
-      caption: "San Francisco",
-    },
-    {
-      image:
-        "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
-      caption: "Scotland",
-    },
-    {
-      image:
-        "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
-      caption: "Darjeeling",
-    },
-  ];
+import "../../App.css";
+//import { Carousel } from "react-bootstrap";
+
+function Apply()
+{
   return (
-    <div>
-      <h1 className="apply">APPLY NOW</h1>
-      <SlideShow data={data} />
-    </div>
+      <div>
+          <div>
+              <h1 className="apply">What to know before you apply</h1>
+          </div>
+          <div className="info__paragraph requirements">
+              <h5>We want to make your application process as simple and quick as possible. Before you apply, please have a look at the checklist below to make sure we are exactly what you are looking for.</h5>
+              <h1>REQUIREMENTS.</h1>
+              <ul>
+                      <li>
+                          <h4>Background check is required and you must have a clear background with no criminal and eviction records.</h4>
+                      </li>
+                      <li>
+                          <h4>Your income must be 2.5 times of the rent.</h4>
+                      </li>
+                      <li>
+                          <h4>You must be able to provide proof of incomes.</h4>
+                      </li>
+                      <li>
+                          <h4>You must be able to provide the reference of your current or previous landlord.</h4>
+                      </li>
+                      <li>
+                          <h4>You must be able to pay rents online via TenantCloud.</h4>
+                      </li>
+                      
+              </ul>
+          </div>
+
+          {/*<Carousel>*/}
+          {/*    <Carousel.Item>*/}
+          {/*        <img*/}
+          {/*            className="d-block w-100"*/}
+          {/*            src="holder.js/800x400?text=First slide&bg=373940"*/}
+          {/*            alt="First slide"*/}
+          {/*        />*/}
+          {/*        <Carousel.Caption>*/}
+          {/*            <h3>First slide label</h3>*/}
+          {/*            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
+          {/*        </Carousel.Caption>*/}
+          {/*    </Carousel.Item>*/}
+          {/*    <Carousel.Item>*/}
+          {/*        <img*/}
+          {/*            className="d-block w-100"*/}
+          {/*            src="holder.js/800x400?text=Second slide&bg=282c34"*/}
+          {/*            alt="Second slide"*/}
+          {/*        />*/}
+
+          {/*        <Carousel.Caption>*/}
+          {/*            <h3>Second slide label</h3>*/}
+          {/*            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*/}
+          {/*        </Carousel.Caption>*/}
+          {/*    </Carousel.Item>*/}
+          {/*    <Carousel.Item>*/}
+          {/*        <img*/}
+          {/*            className="d-block w-100"*/}
+          {/*            src="holder.js/800x400?text=Third slide&bg=20232a"*/}
+          {/*            alt="Third slide"*/}
+          {/*        />*/}
+
+          {/*        <Carousel.Caption>*/}
+          {/*            <h3>Third slide label</h3>*/}
+          {/*            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>*/}
+          {/*        </Carousel.Caption>*/}
+          {/*    </Carousel.Item>*/}
+          {/*</Carousel>*/}
+       </div>
   );
 }
-
 export default Apply;

@@ -40,7 +40,7 @@ export class Login extends Component {
   login(event) {
     debugger;
 
-    fetch(variables.API_URL + "Login", {
+    fetch("api/Login", {
       method: "POST",
       headers: {
         Accept: "application/json",

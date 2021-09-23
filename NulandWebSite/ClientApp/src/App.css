@@ -8,6 +8,7 @@
 .home,
 .about-us,
 .listings,
+.contact-us,
 .apply {
   display: flex;
   flex-direction: column;
@@ -39,12 +40,13 @@
 }
 
 .apply {
-  background-image: url("./images/apply.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+    background-image: url("./images/apply.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #242424;
+    color: #fff;
+    font-size: 100px;
 }
 
 .listings > h1 {
@@ -53,4 +55,26 @@
 
 .listings > p {
   font-size: 32px;
+}
+
+.info__paragraph{
+    margin: 50px 200px 50px 200px;
+    line-height: 1.5;
+    
+}
+
+.info__paragraph > h1 {
+    font-size: 60px;
+}
+
+
+
+.info__paragraph contact > ul, li, a {
+    text-decoration: none;
+    list-style-type: none !important;
+    text-align: center;
+}
+
+.info__paragraph requirements > ul, li{
+    text-align: left !important;
 }

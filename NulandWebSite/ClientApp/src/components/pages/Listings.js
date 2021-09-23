@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "../../App.css";
 import CardItem from "../CardItem";
 import "../Poster.css";
@@ -19,12 +19,13 @@ import SlideShow from "../SlideShow";
 // }
 // export default Listings;
 
-export class Listings extends Component {
+export default class Listings extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      listings: [],
+        listings: [],
+        props
     };
   }
 
@@ -34,10 +35,22 @@ export class Listings extends Component {
       .then((data) => {
         this.setState({ listings: data });
       });
+      //let temp = [];
+      //const data = fetch("api/Listings").then((value) => value.json())
+      //    .then((result) => {
+      //        result.map((obj) => {
+      //            temp.push(obj);
+      //        })
+      //    });
+      
+      //this.setState({ listings: temp });
+      //console.log(this.listings);
+
   }
 
   componentDidMount() {
     this.refreshList();
+
   }
 
   render() {
@@ -62,14 +75,14 @@ export class Listings extends Component {
       <div>
         <div className="listings">
           <h1>LISTINGS</h1>
-          <p>Current and Future Available Accomodations</p>
+          
         </div>
 
         <div>
           <div className="posters__container">
             <div className="posters__wrapper">
               <ul className="posters__items">
-                {listings.map((list) => (
+                {listings.map((list) => ( list.Status? (
                   <div className="poster__item" key={list.ListingID}>
                     {/* <div className="poster__picture">
                       <CardItem
@@ -81,16 +94,19 @@ export class Listings extends Component {
                     <SlideShow data={list.data} />
                     <div className="poster__info">
                       <h3>
-                        {list.Type} in {list.City}, {list.State}
+                        {list.Type} in {list.City}, AZ
                       </h3>
                       <p>
-                        <i class="fas fa-map-marker-alt"></i> {list.Street},{" "}
-                        {list.City}, {list.State}, {list.Zipcode}
+                        <i class="fas fa-map-marker-alt"></i> 
+                        {" "}{list.City}, AZ, {list.Zipcode}
                       </p>
                       <p>Available date: {list.AvailableDate}</p>
                       <p>Price: {list.Price}</p>
+                      <p>Deposit: {list.Deposit}</p>
+                      <p>Area: {list.Area} sqft</p>
                       <p>Amenities: {list.Amenities}</p>
                       <p>Policy: {list.Policy}</p>
+                      <p>For more information, visit <a target="_blank" href="/apply">Before You Apply</a></p>
                       <div className="hero-btns">
                         {/* <Button
                           className="btns"
@@ -111,7 +127,7 @@ export class Listings extends Component {
                       </a>
                     </div>
                   </div>
-                ))}
+                ):null))}
               </ul>
             </div>
           </div>

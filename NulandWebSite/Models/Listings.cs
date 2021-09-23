@@ -10,7 +10,8 @@ namespace nulandWebApp.Models
         public int ListingID { get; set; }
         public string Type { get; set; }
         public int Price { get; set; }
-
+        public int Deposit { get; set; }
+        public int Area { get; set; }
         public string Amenities { get; set; }
 
         public string Link { get; set; }
@@ -23,10 +24,10 @@ namespace nulandWebApp.Models
         public string PhotoFileName5 { get; set; }
 
 
-        public string Street { get; set; }
+       
         public string City { get; set; }
 
-        public string State { get; set; }
+        
 
         public string Zipcode { get; set; }
 

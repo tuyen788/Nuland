@@ -1,0 +1,5 @@
+.cards__item {
+    min-width: 300px;
+    display: inline-block;
+    float: left;
+}
