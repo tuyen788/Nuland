@@ -30,14 +30,16 @@ export class Cards extends Component {
                 <h1>Check out these GREAT homes!</h1>
                 <div className="cards__container">
                     <div className="cards__wrapper">
-                        <ul classname="cards__items">
+                        <ul className="cards__items">
                             {listings.map((list) => (
+                                <li>
                                 <CardItem
                                     src={'Photos/' + list.PhotoFileName1}
                                     text={`${list.Type} in ${list.City}, AZ`}
                                     label={list.Type}
                                     path="/listings"
-                                />
+                                    />
+                                </li>
                             ))}
                         </ul>
                     </div>

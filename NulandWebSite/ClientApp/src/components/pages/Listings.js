@@ -5,6 +5,7 @@ import "../Poster.css";
 import { Button } from "../Button";
 import Poster from "../Poster";
 import { variables } from "../../Variables.js";
+import "./Listings.css";
 import SlideShow from "../SlideShow";
 // function Listings() {
 //   return (
@@ -60,11 +61,11 @@ export default class Listings extends Component {
 
     let data = [];
     listings.map((list) => {
-        data.push({ image: `Photos/${list.PhotoFileName1}` });
-        data.push({ image: `Photos/${list.PhotoFileName2}` });
-        data.push({ image: `Photos/${list.PhotoFileName3}` });
-        data.push({ image: `Photos/${list.PhotoFileName4}` });
-        data.push({ image: `Photos/${list.PhotoFileName5}` });
+        data.push({ image: `Photos/${list.PhotoFileName1}`, caption: "Home photo" });
+        data.push({ image: `Photos/${list.PhotoFileName2}`, caption: "Home photo" });
+        data.push({ image: `Photos/${list.PhotoFileName3}`, caption: "Home photo"});
+        data.push({ image: `Photos/${list.PhotoFileName4}`, caption: "Home photo"});
+        data.push({ image: `Photos/${list.PhotoFileName5}`, caption: "Home photo"});
       list.data = data;
       data = [];
     });
@@ -84,15 +85,15 @@ export default class Listings extends Component {
               <ul className="posters__items">
                 {listings.map((list) => ( list.Status? (
                   <div className="poster__item" key={list.ListingID}>
-                    {/* <div className="poster__picture">
-                      <CardItem
-                        src={variables.PHOTO_URL + list.PhotoFileName}
-                        text={`${list.Type} in ${list.Location}`}
-                        label={list.Type}
-                      />
-                    </div> */}
-                    <SlideShow data={list.data} />
-                    <div className="poster__info">
+                     <div className="poster__picture">
+                        <CardItem
+                           src={'Photos/' + list.PhotoFileName1}
+                           text={`${list.Type} in ${list.City}, AZ`}
+                           label={list.Type}
+                        />
+                     </div> 
+                    {/*    <div><SlideShow data={list.data} key={list.ListingID} id={list.ListingID} /></div>*/}
+                    <div className="poster__info__minimized">
                       <h3>
                         {list.Type} in {list.City}, AZ
                       </h3>
@@ -102,29 +103,18 @@ export default class Listings extends Component {
                       </p>
                       <p>Available date: {list.AvailableDate}</p>
                       <p>Price: {list.Price}</p>
-                      <p>Deposit: {list.Deposit}</p>
                       <p>Area: {list.Area} sqft</p>
-                      <p>Amenities: {list.Amenities}</p>
-                      <p>Policy: {list.Policy}</p>
-                      <p>For more information, visit <a target="_blank" href="/apply">Before You Apply</a></p>
                       <div className="hero-btns">
-                        {/* <Button
-                          className="btns"
-                          buttonStyle="btn--primary"
-                          buttonSize="btn--medium"
+                         <Button
+                                    className="btns"
+                                    buttonStyle="btn--primary"
+                                    buttonSize="btn--medium"
+                                    destination="listing"
+                                    data={list}
                         >
-                          LEARN MORE <i class="fas fa-info-circle"></i>
-                        </Button> */}
+                          SEE MORE <i class="fas fa-info-circle"></i>
+                        </Button> 
                       </div>
-                      <a
-                        href={list.Link}
-                        target="_blank"
-                        style={{ marginLeft: "65%" }}
-                      >
-                        <button className="btn btn--primary btn--medium">
-                          APPLY NOW <i class="fas fa-edit"></i>
-                        </button>
-                      </a>
                     </div>
                   </div>
                 ):null))}

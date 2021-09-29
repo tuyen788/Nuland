@@ -13,16 +13,17 @@ export const Button = ({
   buttonStyle,
   buttonSize,
   destination,
-  link,
+    link,
+  data
 }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];
 
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
-  return (
-    <Link to={destination} className="btn-mobile" href={link}>
+    console.log(data);
+    return (
+        <Link to={{ pathname:destination, state:data  }} className="btn-mobile" href={link}>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}

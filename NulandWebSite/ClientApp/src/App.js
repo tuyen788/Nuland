@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/AboutUs";
 import ContactUs from "./components/pages/ContactUs";
 import Listings from "./components/pages/Listings";
+import Listing from "./components/pages/Listing";
 import Apply from "./components/pages/Apply";
 import Footer from "./components/Footer";
 import { Admin } from "./components/pages/Admin";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/listings" component={Listings} />
           <Route path="/about-us" component={AboutUs} />
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/listing" component={Listing} />
           <Route path="/apply" component={Apply} />
           <Route path="/login" component={Login} />
           <ProtectedRoute exact path="/admin" component={Admin} />

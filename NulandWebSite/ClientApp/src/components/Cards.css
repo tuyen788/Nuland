@@ -8,32 +8,25 @@ h1 {
 }
 
 .cards__container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  max-width: 1120px;
-  width: 90%;
-  margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
 }
 
 .cards__wrapper {
     position: relative;
     margin: 50px 0 45px;
-    /*overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    display: inline-block;*/
+    display: grid;
 }
 
 .cards__items {
     margin-bottom: 24px;
-    display: inline-block;
+    display:grid;
 }
-
-/*.cards__items > ul {
-    overflow: scroll;
-    white-space: nowrap;
-}*/
 
 
 .cards__item {

@@ -28,7 +28,7 @@ function Footer() {
       {/*</section>*/}
       <div class="footer-links">
         <div className="footer-link-wrapper">
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>About Us</h2>
             <Link to="/contact-us">Contact Us</Link>
             <Link to="/apply">Policies</Link>
@@ -50,7 +50,7 @@ function Footer() {
             <Link to="/">Agency</Link>
             <Link to="/">Influencer</Link>
           </div> */}
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>Find Us</h2>
             <a href="https://www.facebook.com/NuLandCom">Facebook</a>
             <a href="mailto:homlandllc@outlook.com">Email</a>
@@ -58,7 +58,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <section class="social-media">
+      <section className="social-media">
         <div className="social-media-wrap">
           <div className="footer-logo">
             {/* <Link to="/" className="social-logo">

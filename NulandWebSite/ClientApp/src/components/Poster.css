@@ -27,9 +27,15 @@
 }
 
 .poster__picture {
-  width: 700px;
+  width: 500px;
 }
 
 .poster__info {
   max-width: 600px;
+}
+
+.poster__info__mimimized{
+    text-align:left;
+    margin-left: 10px;
+    align-items: start;
 }
