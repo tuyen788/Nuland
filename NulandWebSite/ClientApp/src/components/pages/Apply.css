@@ -1,0 +1,25 @@
+.info__paragraph {
+    line-height: 1.5;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.info__paragraph > h1 {
+    font-size: 50px;
+}
+
+
+
+.info__paragraph contact > ul, li, a {
+    text-decoration: none;
+    list-style-type: none !important;
+    text-align: center;
+}
+
+.info__paragraph requirements > ul, li {
+    text-align: left !important;
+}
+
+info__paragraph requirements {
+    margin: auto;
+}

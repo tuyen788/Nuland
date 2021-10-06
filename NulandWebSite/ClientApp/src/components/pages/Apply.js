@@ -1,5 +1,6 @@
 import React from "react";
 import "../../App.css";
+import "./Apply.css";
 //import { Carousel } from "react-bootstrap";
 
 function Apply()
@@ -7,11 +8,11 @@ function Apply()
   return (
       <div>
           <div>
-              <h1 className="apply">What to know before you apply</h1>
+              <h1 className="apply">Before You Apply</h1>
           </div>
           <div className="info__paragraph requirements">
               <h5>We want to make your application process as simple and quick as possible. Before you apply, please have a look at the checklist below to make sure we are exactly what you are looking for.</h5>
-              <h1>REQUIREMENTS.</h1>
+              <h1>REQUIREMENTS</h1>
               <ul>
                       <li>
                           <h4>Background check is required and you must have a clear background with no criminal and eviction records.</h4>

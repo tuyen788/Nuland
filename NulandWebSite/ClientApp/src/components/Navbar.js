@@ -74,7 +74,7 @@ function Navbar() {
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                WHAT TO KNOW BEFORE APPLYING
+                Before You Apply
               </Link>
             </li>
           </ul>

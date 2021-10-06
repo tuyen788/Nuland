@@ -33,7 +33,7 @@
   /* background-image: url("./images/img-1.jpg"); */
   background-color: #242424;
   background-position: center;
-  background-size: fill;
+  background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
@@ -57,24 +57,3 @@
   font-size: 32px;
 }
 
-.info__paragraph{
-    margin: 50px 200px 50px 200px;
-    line-height: 1.5;
-    
-}
-
-.info__paragraph > h1 {
-    font-size: 60px;
-}
-
-
-
-.info__paragraph contact > ul, li, a {
-    text-decoration: none;
-    list-style-type: none !important;
-    text-align: center;
-}
-
-.info__paragraph requirements > ul, li{
-    text-align: left !important;
-}

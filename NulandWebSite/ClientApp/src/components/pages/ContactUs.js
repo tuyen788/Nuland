@@ -7,7 +7,7 @@ function ContactUs() {
             <div className="info__paragraph contact">
                 <h1>CONTACT US</h1>
                 <h4>
-                    We strive to prodive our potential tenants the best customer experience. For further inquiries, please contact us via:
+                    We strive to prodive our tenants the best customer experience. For further inquiries, please contact us via:
                 </h4>
                 <br></br>
                 <ul>

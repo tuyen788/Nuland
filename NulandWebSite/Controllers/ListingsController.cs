@@ -33,6 +33,7 @@ namespace nulandWebApp.Controllers
                             select ListingID,Type,Price,Deposit,Area,Amenities,Link,Policy,Status,City,Zipcode,convert(varchar(10),AvailableDate,120) as AvailableDate,PhotoFileName1,PhotoFileName2,PhotoFileName3,PhotoFileName4,PhotoFileName5
                             from
                             dbo.Listings
+                            order by AvailableDate
                             ";
 
             DataTable table = new DataTable();

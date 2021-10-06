@@ -13,7 +13,7 @@ function AboutUs() {
             <div className="info__paragraph">
                 <h1>Nuland Inc.</h1>
                 <h4>
-                    Being a local family-owned company in Phoenix, AZ, we have lived here for many years and love everything about AZ. As more and more residents are moving here every year, we understand it is very competitive to find a place, so we want to make it more affordable to everyone by providing fair price rentals in the most desired neighborhoods. We are proud to manage all of the properties and provide the best rental experiences to our tenants.
+                    Being a local family-owned company in Phoenix, AZ, we have lived here for many years and love everything about AZ. As more and more people are moving here every year, we understand it is very competitive to find a place, so we want to make it more affordable to everyone by providing fair price rentals in the most desired neighborhoods. We are proud to manage all of the properties and provide the best rental experiences to our tenants.
                 </h4>
             </div>
             <div className="hero-btns">

@@ -52,7 +52,7 @@ function Footer() {
           </div> */}
           <div className="footer-link-items">
             <h2>Find Us</h2>
-            <a href="https://www.facebook.com/NuLandCom">Facebook</a>
+            <a href="https://www.facebook.com/NuLandCom" target="_blank">Facebook</a>
             <a href="mailto:homlandllc@outlook.com">Email</a>
             <Link to="/admin">Admin</Link>
           </div>

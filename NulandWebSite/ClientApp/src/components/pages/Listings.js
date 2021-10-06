@@ -107,7 +107,7 @@ export default class Listings extends Component {
                       <div className="hero-btns">
                          <Button
                                     className="btns"
-                                    buttonStyle="btn--primary"
+                                    buttonStyle="btn--filled"
                                     buttonSize="btn--medium"
                                     destination="listing"
                                     data={list}

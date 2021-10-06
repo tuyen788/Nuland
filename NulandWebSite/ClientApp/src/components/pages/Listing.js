@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import "../../App.css";
 import SlideShow from "../SlideShow";
-import Button from "../Button.js";
+import "../Poster.css"
 
 
 function Listing(props) {
@@ -32,7 +32,7 @@ function Listing(props) {
                         <a
                             href={props.location.state.Link}
                             target="_blank"
-                            style={{ marginLeft: "65%" }}
+                            style={{ margin: "auto" }}
                         >
                             <button className="btn btn--primary btn--medium">
                                 APPLY NOW <i class="fas fa-edit"></i>
