@@ -32,14 +32,12 @@ export class Cards extends Component {
                     <div className="cards__wrapper">
                         <ul className="cards__items" style={{ padding: "0px", margin: "0px"}}>
                             {listings.map((list) => (list.Status?(
-                                <li>
                                 <CardItem
                                     src={'Photos/' + list.PhotoFileName1}
                                     text={`${list.Type} in ${list.City}, AZ`}
                                     label={list.Type}
                                     path="/listings"
                                     />
-                                </li>
                             ):null))}
                         </ul>
                     </div>

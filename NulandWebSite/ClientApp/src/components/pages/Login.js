@@ -73,7 +73,7 @@ export class Login extends Component {
                 <Card className="p-2">
                   <CardBody>
                     <Form>
-                      <h2>Log In Required</h2>
+                      <h2>Log In</h2>
                       <InputGroup className="mb-3">
                         <Input
                           type="text"

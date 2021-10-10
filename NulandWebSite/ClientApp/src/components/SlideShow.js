@@ -53,21 +53,22 @@
 ////export default SlideShow;
 
 import React, { useState } from "react";
+import "./SlideShow.css";
 
 export default function SlideShow(props) {
-    const [selectedImg, setSelectedImg] = useState(Images[0]);
+    const [selectedImg, setSelectedImg] = useState(props.data[0]);
 
     return (
-        <div className="App">
+        <div className="slideshow">
             <div className="container">
                 <img src={selectedImg} alt="Selected" className="selected" />
                 <div className="imgContainer">
-                    {Images.map((img, index) => (
+                    {props.data.map((img, index) => (
                         <img
-                            style={{ border: selectedImg === img ? "4px solid purple" : "" }}
+                            style={{ border: selectedImg === img ? "4px solid grey" : "" }}
                             key={index}
                             src={img}
-                            alt="dog"
+                            alt="home photo"
                             onClick={() => setSelectedImg(img)}
                         />
                     ))}

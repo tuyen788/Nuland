@@ -134,7 +134,7 @@ export class Admin extends Component {
       Policy: list.Policy,
       Status: list.Status,
       AvailableDate: list.AvailableDate,
-      PhotoFileName1: list.PhotoFileName2,
+      PhotoFileName1: list.PhotoFileName1,
       PhotoFileName2: list.PhotoFileName2,
       PhotoFileName3: list.PhotoFileName3,
       PhotoFileName4: list.PhotoFileName4,

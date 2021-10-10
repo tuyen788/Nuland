@@ -61,11 +61,17 @@ export default class Listings extends Component {
 
     let data = [];
     listings.map((list) => {
-        data.push({ image: `Photos/${list.PhotoFileName1}`, caption: "Home photo" });
-        data.push({ image: `Photos/${list.PhotoFileName2}`, caption: "Home photo" });
-        data.push({ image: `Photos/${list.PhotoFileName3}`, caption: "Home photo"});
-        data.push({ image: `Photos/${list.PhotoFileName4}`, caption: "Home photo"});
-        data.push({ image: `Photos/${list.PhotoFileName5}`, caption: "Home photo"});
+        //data.push({ image: `Photos/${list.PhotoFileName1}`, caption: "Home photo" });
+        //data.push({ image: `Photos/${list.PhotoFileName2}`, caption: "Home photo" });
+        //data.push({ image: `Photos/${list.PhotoFileName3}`, caption: "Home photo"});
+        //data.push({ image: `Photos/${list.PhotoFileName4}`, caption: "Home photo"});
+        //data.push({ image: `Photos/${list.PhotoFileName5}`, caption: "Home photo"});
+        data.push(`Photos/${list.PhotoFileName1}`);
+        data.push(`Photos/${list.PhotoFileName2}`);
+        data.push(`Photos/${list.PhotoFileName3}`);
+        data.push(`Photos/${list.PhotoFileName4}`);
+        data.push(`Photos/${list.PhotoFileName5}`);
+
       list.data = data;
       data = [];
     });
@@ -104,7 +110,6 @@ export default class Listings extends Component {
                       <p>Available date: {list.AvailableDate}</p>
                       <p>Price: {list.Price}</p>
                       <p>Area: {list.Area} sqft</p>
-                      <div className="hero-btns">
                          <Button
                                     className="btns"
                                     buttonStyle="btn--filled"
@@ -114,7 +119,6 @@ export default class Listings extends Component {
                         >
                           SEE MORE <i class="fas fa-info-circle"></i>
                         </Button> 
-                      </div>
                     </div>
                   </div>
                 ):null))}

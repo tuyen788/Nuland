@@ -26,6 +26,7 @@ h1 {
 .cards__items {
     margin-bottom: 24px;
     display: grid;
+    justify-content:center;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
 }
@@ -44,6 +45,7 @@ h1 {
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 10px;
+  max-width: 350px;
 }
 
 .cards__item__link {
